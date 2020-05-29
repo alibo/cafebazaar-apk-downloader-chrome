@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "Cafebazaar APK Downloader",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "Generate download links for cafebazaar.ir Android apps",
+    "description": "The description of the application"
+  }
+}
