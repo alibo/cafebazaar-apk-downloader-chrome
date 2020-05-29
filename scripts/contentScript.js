@@ -69,7 +69,7 @@ waitForElement('a[itemprop="offers"').then(btn => {
 
         let downloadLink = `${cdnPrefix}apks/${token}.apk`
 
-        console.log('download link:', downloadLink)
+        console.log('APK download link:', downloadLink)
 
         let downloadBtn = document.createElement("a")
         downloadBtn.setAttribute('class', 'btn btn-primary')
@@ -82,7 +82,3 @@ waitForElement('a[itemprop="offers"').then(btn => {
 
     }).catch(err => console.log('Request failed', err))
 })
-
-window.onpopstate = function (event) {
-    alert(`location: ${document.location}, state: ${JSON.stringify(event.state)}`)
-}
