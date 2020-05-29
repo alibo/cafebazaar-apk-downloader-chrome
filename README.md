@@ -12,3 +12,4 @@ Chrome webstore: **pending for reviewing**
 ### Known issues
 
 1. If you didn't open the application page directly on your browser, you won't see the download link! you need to refresh the page first!
+2. You can't select the `SDK` version, it's hardcoded to `22`!
