@@ -1,5 +1,5 @@
 # Cafabazaar APK Download - Chrome Extension
-A simple chrome extension for downloading apks from cafebazaar.ir directly!
+A simple chrome extension for downloading APKs from [cafebazaar.ir](https://cafebazaar.ir) directly!
 
 ### Screenshot
 
