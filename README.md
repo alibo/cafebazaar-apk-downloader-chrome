@@ -8,3 +8,7 @@ A simple chrome extension for downloading APKs from [cafebazaar.ir](https://cafe
 ### Install
 
 Chrome webstore: **pending for reviewing**
+
+### Known issues
+
+1. If you didn't open the application page directly on your browser, you won't see the download link! you need to refresh the page first!
