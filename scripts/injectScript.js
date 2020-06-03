@@ -1,4 +1,3 @@
-'use strict'
 
 function waitForElement(selector) {
     return new Promise(function (resolve, reject) {
@@ -42,7 +41,8 @@ waitForElement('a[itemprop="offers"').then(btn => {
         body: JSON.stringify({
             properties: {
                 androidClientInfo: {
-                    sdkVersion: 22
+                    sdkVersion: 22,
+                    cpu: 'x86,armeabi-v7a,armeabi'
                 }
             },
             singleRequest: {
@@ -64,9 +64,7 @@ waitForElement('a[itemprop="offers"').then(btn => {
         let cdnPrefix = res.singleReply.appDownloadInfoReply.cdnPrefix[0]
         let packageSize = res.singleReply.appDownloadInfoReply.packageSize / 1024 / 1024
         let versionCode = res.singleReply.appDownloadInfoReply.versionCode || 0
-
-
-
+åå
         let downloadLink = `${cdnPrefix}apks/${token}.apk`
 
         console.log('APK download link:', downloadLink)
@@ -75,7 +73,7 @@ waitForElement('a[itemprop="offers"').then(btn => {
         downloadBtn.setAttribute('class', 'btn btn-primary')
         downloadBtn.setAttribute('href', downloadLink)
         downloadBtn.setAttribute('title', `${token}_${pkg}_${versionCode}.apk`)
-        downloadBtn.innerHTML = `دانلود (${packageSize.toFixed(2)} MB)` 
+        downloadBtn.innerHTML = `دانلود (${packageSize.toFixed(2)} MB)`
 
         btn.parentNode.insertBefore(downloadBtn, btn.parentNode.childNodes[0])
         btn.parentNode.removeChild(btn)

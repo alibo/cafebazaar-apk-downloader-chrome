@@ -1,6 +1,6 @@
 {
   "name": "__MSG_appName__",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "manifest_version": 2,
   "description": "__MSG_appDescription__",
   "icons": {
@@ -8,12 +8,13 @@
     "128": "images/icon-128.png"
   },
   "default_locale": "en",
-  "content_scripts": [
-    {
-      "matches": ["https://cafebazaar.ir/app/*"],
-      "js": ["scripts/contentScript.js"],
-      "run_at": "document_end"
-    }
+  "background": {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  },
+  "permissions": [
+    "tabs",
+    "https://cafebazaar.ir/*"
   ],
   "page_action": {
     "default_icon": {
