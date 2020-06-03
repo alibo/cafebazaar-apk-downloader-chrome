@@ -64,7 +64,7 @@ waitForElement('a[itemprop="offers"').then(btn => {
         let cdnPrefix = res.singleReply.appDownloadInfoReply.cdnPrefix[0]
         let packageSize = res.singleReply.appDownloadInfoReply.packageSize / 1024 / 1024
         let versionCode = res.singleReply.appDownloadInfoReply.versionCode || 0
-åå
+
         let downloadLink = `${cdnPrefix}apks/${token}.apk`
 
         console.log('APK download link:', downloadLink)
