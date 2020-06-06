@@ -7,7 +7,7 @@ A simple chrome extension for downloading APKs from [cafebazaar.ir](https://cafe
 
 ### Install
 
-Chrome webstore (Pending in review :|): https://chrome.google.com/webstore/detail/cafebazaar-apk-downloader/imnogedkmanognaahdphhfhgehlfgdoh
+Chrome webstore: https://chrome.google.com/webstore/detail/cafebazaar-apk-downloader/imnogedkmanognaahdphhfhgehlfgdoh
 
 ### Known issues
 
