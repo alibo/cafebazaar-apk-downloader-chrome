@@ -40,15 +40,20 @@ waitForElement('a[itemprop="offers"').then(btn => {
         },
         body: JSON.stringify({
             properties: {
+                language: 2,
+                clientVersionCode: 1100301,
                 androidClientInfo: {
                     sdkVersion: 22,
                     cpu: 'x86,armeabi-v7a,armeabi'
-                }
+                },
+                clientVersion: "11.3.1",
+                isKidsEnabled: false,
             },
             singleRequest: {
                 appDownloadInfoRequest: {
                     downloadStatus: 1,
                     packageName: pkg,
+                    referrers: [],
                 }
             }
         })
