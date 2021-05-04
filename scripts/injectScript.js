@@ -20,16 +20,10 @@ function waitForElement(selector) {
     });
 }
 
-waitForElement('a[itemprop="offers"').then(btn => {
+waitForElement('div.CoverHeader__btn-area a').then(btn => {
     let url = btn.getAttribute('href')
-    let priceMeta = btn.querySelector('meta[itemprop="price"]')
 
-    let price = priceMeta.getAttribute('content')
     let pkg = new URL(url).searchParams.get('id')
-
-    if (price != 0) {
-        return
-    }
 
     fetch('https://api.cafebazaar.ir/rest-v1/process/AppDownloadInfoRequest', {
         mode: 'cors',
@@ -75,7 +69,7 @@ waitForElement('a[itemprop="offers"').then(btn => {
         console.log('APK download link:', downloadLink)
 
         let downloadBtn = document.createElement("a")
-        downloadBtn.setAttribute('class', 'btn btn-primary')
+        downloadBtn.setAttribute('class', 'btn btn-primary btn-large')
         downloadBtn.setAttribute('href', downloadLink)
         downloadBtn.setAttribute('title', `${token}_${pkg}_${versionCode}.apk`)
         downloadBtn.innerHTML = `دانلود (${packageSize.toFixed(2)} MB)`
