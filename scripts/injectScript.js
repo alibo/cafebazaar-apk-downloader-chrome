@@ -20,7 +20,7 @@ function waitForElement(selector) {
     });
 }
 
-waitForElement('div.CoverHeader__btn-area a').then(btn => {
+waitForElement('a.AppInstallBtn').then(btn => {
     let url = btn.getAttribute('href')
 
     let pkg = new URL(url).searchParams.get('id')
@@ -54,7 +54,7 @@ waitForElement('div.CoverHeader__btn-area a').then(btn => {
     }).then(async response => {
         let res = await response.json()
 
-        if (!res.properties || res.properties.statusCode != 200) {
+        if (!res.singleReply || !res.singleReply.appDownloadInfoReply) {
             console.log('Invalid response:', res)
             return
         }
@@ -69,10 +69,12 @@ waitForElement('div.CoverHeader__btn-area a').then(btn => {
         console.log('APK download link:', downloadLink)
 
         let downloadBtn = document.createElement("a")
-        downloadBtn.setAttribute('class', 'btn btn-primary btn-large')
+        downloadBtn.setAttribute('class', 'AppInstallBtn newbtn')
         downloadBtn.setAttribute('href', downloadLink)
         downloadBtn.setAttribute('title', `${token}_${pkg}_${versionCode}.apk`)
-        downloadBtn.innerHTML = `دانلود (${packageSize.toFixed(2)} MB)`
+        downloadBtn.setAttribute('data-color', 'primary')
+        downloadBtn.setAttribute('data-size', 'lg')
+        downloadBtn.innerHTML = `⬇️ دانلود (${packageSize.toFixed(2)} MB)`
 
         btn.parentNode.insertBefore(downloadBtn, btn.parentNode.childNodes[0])
         btn.parentNode.removeChild(btn)
